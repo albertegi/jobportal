@@ -8,6 +8,7 @@ import java.util.List;
 @Table(name = "job_seeker_profile")
 public class JobSeekerProfile {
 
+
     @Id
     private int userAccountId;
 
@@ -36,6 +37,10 @@ public class JobSeekerProfile {
     public JobSeekerProfile() {
     }
 
+    public JobSeekerProfile(Users user) {
+        this.userId = user;
+    }
+
     public JobSeekerProfile(int userAccountId, Users userId, String firstName, String lastName, String city, String state, String country, String workAuthorization, String employmentType, String resume, String profilePhoto, List<Skills> skills) {
         this.userAccountId = userAccountId;
         this.userId = userId;
@@ -50,6 +55,9 @@ public class JobSeekerProfile {
         this.profilePhoto = profilePhoto;
         this.skills = skills;
     }
+
+
+
 
     public int getUserAccountId() {
         return userAccountId;

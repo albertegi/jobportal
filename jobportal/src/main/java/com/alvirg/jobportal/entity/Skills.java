@@ -14,6 +14,8 @@ public class Skills {
 
     private String experienceLevel;
 
+    private String yearsOfExperience;
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "job_seeker_profile")
     private JobSeekerProfile jobSeekerProfile;
@@ -21,10 +23,12 @@ public class Skills {
     public Skills() {
     }
 
-    public Skills(int id, String name, String experienceLevel, JobSeekerProfile jobSeekerProfile) {
+
+    public Skills(int id, String name, String experienceLevel, String yearsOfExperience, JobSeekerProfile jobSeekerProfile) {
         this.id = id;
         this.name = name;
         this.experienceLevel = experienceLevel;
+        this.yearsOfExperience = yearsOfExperience;
         this.jobSeekerProfile = jobSeekerProfile;
     }
 
@@ -52,6 +56,14 @@ public class Skills {
         this.experienceLevel = experienceLevel;
     }
 
+    public String getYearsOfExperience() {
+        return yearsOfExperience;
+    }
+
+    public void setYearsOfExperience(String yearsOfExperience) {
+        this.yearsOfExperience = yearsOfExperience;
+    }
+
     public JobSeekerProfile getJobSeekerProfile() {
         return jobSeekerProfile;
     }
@@ -66,6 +78,7 @@ public class Skills {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", experienceLevel='" + experienceLevel + '\'' +
+                ", yearsOfExperience='" + yearsOfExperience + '\'' +
                 ", jobSeekerProfile=" + jobSeekerProfile +
                 '}';
     }
